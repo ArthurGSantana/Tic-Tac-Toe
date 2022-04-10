@@ -1,0 +1,44 @@
+<div class="main-container">
+  <h1 class="mat-display-2">Tic-Tac-Toe</h1>
+  <div class="field d-flex justify-content-center">
+    <p #currentStatus class="mat-display-1">Clique para iniciar o jogo!</p>
+  </div>
+
+  <div *ngIf="gameLogic.gameStatus === 0" class="field d-flex justify-content-center" style="width: 100%;">
+    <button mat-raised-button color="accent" class="start-game-button" (click)="startGame()">Iniciar o Jogo</button>
+  </div>
+
+  <div *ngIf="gameLogic.gameStatus === 1" class="gameboard">
+
+    <div class="players player1 align-self-center">
+      <p class="mat-body-1" style="font-weight: bold; margin: 0 0 10px 10px;">Jogador 1</p>
+    </div>
+
+    <div class="gamefield container-fluid">
+
+      <div class="row">
+        <div position="0" class="subfield col-4" (click)="clickSubfield($event)"><i></i></div>
+        <div position="1" class="subfield col-4" (click)="clickSubfield($event)"><i></i></div>
+        <div position="2" class="subfield col-4" (click)="clickSubfield($event)"><i></i></div>
+      </div>
+
+      <div class="row">
+        <div position="3" class="subfield col-4" (click)="clickSubfield($event)"><i></i></div>
+        <div position="4" class="subfield col-4" (click)="clickSubfield($event)"><i></i></div>
+        <div position="5" class="subfield col-4" (click)="clickSubfield($event)"><i></i></div>
+      </div>
+
+      <div class="row">
+        <div position="6" class="subfield col-4" (click)="clickSubfield($event)"><i></i></div>
+        <div position="7" class="subfield col-4" (click)="clickSubfield($event)"><i></i></div>
+        <div position="8" class="subfield col-4" (click)="clickSubfield($event)"><i></i></div>
+      </div>
+
+    </div>
+
+    <div class="players player2 align-self-center">
+      <p class="mat-body-1" style="font-weight: bold; margin: 0 10px 10px 0;">Jogador 2</p>
+    </div>
+
+  </div>
+</div>
